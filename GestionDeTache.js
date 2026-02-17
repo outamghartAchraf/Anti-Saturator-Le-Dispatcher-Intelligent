@@ -1,5 +1,6 @@
 let table = [];
 
+
 const tache = document.getElementById("tache");
 const description = document.getElementById("description");
 const urgence = document.getElementById("urgence");
@@ -30,6 +31,7 @@ ajouter.addEventListener("click", () => {
   table.push(newTask);
 
   AfficherInfoDeTache(table);
+  CalculStatistiques(); 
 
   alert("element est ajouter");
 
@@ -92,21 +94,62 @@ function AfficherInfoDeTache(arr) {
 }
 
 function Supprimer(id) {        // function 
-  table = table.filter(item => item.id !== id);   // filter  
-  AfficherInfoDeTache(table);                     // afficher les taches mn jdide  
+  table = table.filter(item => item.id !== id);   // filter par id 
+  AfficherInfoDeTache(table);
+ CalculStatistiques();      // thdite statistiques b3de supprimer
+                     // afficher les taches mn jdide  
 }
 addEventListener("click", function (e) {      // mli nkliki ghadi iw933  dakxi li ltht    الحدث (event)
   const btn = e.target.closest(".delete-btn");   // العنصر اللي تكليكا عليه 
 
 // على أقرب parent (أب)   closest()  => bdbtte li fihe class name delete-btn
 
-//   if (btn) {            ila tame 3amalia click 3la button         
+   if (btn) {          //  ila tame 3amalia click 3la button         
     const id = Number(btn.dataset.id);  //ghadi i3tina id li mkhzone f id-data
     Supprimer(id);  // bach ntb9o f function dial Supprimer()
-  }
+  }}
 );
 
 
 
+// ------------------------------statistique --------------------------------------------
 
+let statUrgence =document.getElementById("statUrgence");
+let statImportance =document.getElementById("statImportance");
+let statEffort =document.getElementById("statEffort");
+
+
+function CalculStatistiques() {
+
+
+  let totalUrgence = 0;
+  let totalImportance = 0;
+  let totalEffort = 0;
+
+  for (let i = 0; i < table.length; i++) {
+    totalUrgence += Number(table[i].urgence);
+    totalImportance += Number(table[i].importance);
+    totalEffort += Number(table[i].effort);
+  }
+    if (table.length === 0) {
+    statUrgence.textContent = "Moyenne Urgence : 0";
+    statImportance.textContent = "Moyenne Importance : 0";
+    statEffort.textContent = "Moyenne Effort : 0";
+    return;
+  }
+
+
+ 
+
+  let moyenneDeUrgence = totalUrgence / table.length;
+  let moyenneDeImportance = totalImportance / table.length;
+  let moyenneDeEffort = totalEffort / table.length;
+
+  statUrgence.textContent ="Moyenne Urgence : " + moyenneDeUrgence.toFixed(2) ;
+
+  statImportance.textContent ="Moyenne Importance : " + moyenneDeImportance.toFixed(2);
+
+  statEffort.textContent ="Moyenne Effort : " + moyenneDeEffort.toFixed(2);
+}
+ CalculStatistiques()
 
