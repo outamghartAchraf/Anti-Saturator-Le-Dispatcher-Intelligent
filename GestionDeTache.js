@@ -91,3 +91,22 @@ function AfficherInfoDeTache(arr) {
   });
 }
 
+function Supprimer(id) {        // function 
+  table = table.filter(item => item.id !== id);   // filter  
+  AfficherInfoDeTache(table);                     // afficher les taches mn jdide  
+}
+addEventListener("click", function (e) {      // mli nkliki ghadi iw933  dakxi li ltht    الحدث (event)
+  const btn = e.target.closest(".delete-btn");   // العنصر اللي تكليكا عليه 
+
+// على أقرب parent (أب)   closest()  => bdbtte li fihe class name delete-btn
+
+//   if (btn) {            ila tame 3amalia click 3la button         
+    const id = Number(btn.dataset.id);  //ghadi i3tina id li mkhzone f id-data
+    Supprimer(id);  // bach ntb9o f function dial Supprimer()
+  }
+);
+
+
+
+
+
