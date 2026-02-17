@@ -18,7 +18,15 @@ ajouter.addEventListener("click", () => {
     importance: importance.value,
     effort: effort.value
   };
+    
 
+   if (
+  urgence.value < 1 || urgence.value > 5 || importance.value < 1 || importance.value > 5 ||
+     effort.value < 1 || effort.value > 5)
+    {
+  alert("Le nombre doit être entre 1 et 5");
+    return ;
+    }
   table.push(newTask);
 
   AfficherInfoDeTache(table);
@@ -30,5 +38,8 @@ ajouter.addEventListener("click", () => {
   urgence.value = "";
   importance.value = "";
   effort.value = "";
-});
+
+
+})
+
 
