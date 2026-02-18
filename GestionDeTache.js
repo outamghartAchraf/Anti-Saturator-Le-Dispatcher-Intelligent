@@ -3,6 +3,7 @@ let table = [];
 
 const tache = document.getElementById("tache");
 const description = document.getElementById("description");
+
 const urgence = document.getElementById("urgence");
 const importance = document.getElementById("importance");
 const effort = document.getElementById("effort");
@@ -153,3 +154,12 @@ function CalculStatistiques() {
 }
  CalculStatistiques()
 
+
+//  -------------------------------------------hiden-------------------------------
+const btnAdd = document.querySelector(".btn-add");
+const formSection = document.getElementById("formSection");
+
+btnAdd.addEventListener("click", () => {
+    formSection.classList.toggle("hidden");
+});
+//  -------------------------------------------hiden-------------------------------
