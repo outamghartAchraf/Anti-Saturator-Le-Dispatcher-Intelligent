@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Anti-Saturator</title>
+        <link rel="stylesheet" href="../styles/formul.css">
+
+    </head>
+    <body>
+        <section>
+            <h1>Nouvelle tache</h1>
+            <div>
+                <p>Titre de la tache*</p>
+                <input type="text" placeholder="Entre 5 et 50 caractères" />
+            </div>
+            <div>
+                <p>Description(optionnel)</p>
+                <input type="text" placeholder="Détails supplémentaires" />
+            </div>
+        </section>
+        <section>
+            <div class="card">
+                <p>Urgence *ℹ️</p>
+                <input
+                    type="range"
+                    min="1"
+                    max="10"
+                    value="5"
+                    oninput="this.nextElementSibling.textContent = this.value"
+                />
+
+                <span>5</span>
+            </div>
+            <div class="card">
+                <p>Importance *ℹ️</p>
+                <input
+                    type="range"
+                    min="1"
+                    max="10"
+                    value="5"
+                    oninput="this.nextElementSibling.textContent = this.value"
+                />
+
+                <span>5</span>
+            </div>
+            <div class="card">
+                <p>Effort requis *ℹ️</p>
+                <input
+                    type="range"
+                    min="1"
+                    max="10"
+                    value="5"
+                    oninput="this.nextElementSibling.textContent = this.value"
+                />
+
+                <span>5</span>
+            </div>
+            <div class="but">
+                <button>Annuler</button>
+                <button>Ajouter</button>
+            </div>
+        </section>
+        
+    </body>
+</html>
