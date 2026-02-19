@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Anti-Saturator</title>
+        <link rel="stylesheet" href="/styles/styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h2>Anti-Saturator</h2>
+                <a href="./quiz.html" style="text-decoration: none;" class="btn-quiz">Go to quiz</a>
+            </header>
+
+            <section class="priority-task">
+             
+            
+                <div class="metrics">
+                    <div class="metric">
+                        <span>URGENCE</span>
+                        <strong id="statUrgence" >5</strong>
+                    </div>
+                    <div class="metric">
+                        <span>IMPORTANCE</span>
+                        <strong id="statImportance">5</strong>
+                    </div>
+                    <div class="metric">
+                        <span>EFFORT</span>
+                        <strong id="statEffort">4</strong>
+                    </div>
+                </div>
+            </section>
+
+            <div class="add-task">
+                <button class="btn-add">+ Ajouter une tâche</button>
+            </div>
+
+            <section class="tasks">
+                <h3>Toutes les tâches</h3>
+                <div class="cards" id="Container"></div>
+            </section>
+        </div>
+
+        <section id="formSection" class="hidden">
+            <div class="form-card">
+                <h1>Nouvelle tâche</h1>
+
+                <div>
+                    <p>Titre de la tâche *</p>
+                    <input id="tache" type="text" placeholder="Entre 5 et 50 caractères" />
+                </div>
+
+                <div>
+                    <p>Description (optionnel)</p>
+                    <input id="description" type="text" placeholder="Détails supplémentaires" />
+                </div>
+
+                <div class="card">
+                    <p>Urgence * </p>
+                    <input id="urgence" type="range" min="1" max="5" value="5"
+                        oninput="this.nextElementSibling.textContent = this.value" />
+                    <span>5</span>
+                </div>
+
+                <div class="card">
+                    <p>Importance * </p>
+                    <input id="importance" type="range" min="1" max="5" value="5"
+                        oninput="this.nextElementSibling.textContent = this.value" />
+                    <span>5</span>
+                </div>
+
+                <div class="card">
+                    <p>Effort requis * </p>
+                    <input id="effort" type="range" min="1" max="5" value="5"
+                        oninput="this.nextElementSibling.textContent = this.value" />
+                    <span>5</span>
+                </div>
+
+                <div class="but">
+                    <button id="annuler">Annuler</button>
+                    <button id="ajouter">Ajouter</button>
+                </div>
+            </div>
+        </section>
+        <script src="./src/modules/gestiondeTache.js" type="module"></script>
+    </body>
+</html>

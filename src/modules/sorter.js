@@ -40,13 +40,13 @@ export function getScorePercentage(score) {
 export function generateReason(task) {
   const reasons = [];
 
-  if (task.urgency >= 4) reasons.push('très urgente');
+  if (task.urgency >= 4) reasons.push('tres urgente');
   else if (task.urgency >= 3) reasons.push('urgente');
 
-  if (task.importance >= 4) reasons.push('très importante');
+  if (task.importance >= 4) reasons.push('tres importante');
   else if (task.importance >= 3) reasons.push('importante');
 
   if (task.effort <= 2) reasons.push('peu exigeante');
 
-  return reasons.length > 0 ? reasons.join(', ') : 'bien équilibrée';
+  return reasons.length > 0 ? reasons.join(', ') : 'bien équilibree';
 }
