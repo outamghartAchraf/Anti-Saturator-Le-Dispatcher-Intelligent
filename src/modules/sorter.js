@@ -22,3 +22,10 @@ export function getTopTask(tasks, energy) {
 
   return scored[0] || null;
 }
+
+export function skipTask(id) {
+  if (!skippedIds.includes(id)) {
+    skippedIds.push(id);
+  }
+}
+
