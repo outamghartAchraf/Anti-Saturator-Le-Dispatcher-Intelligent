@@ -41,8 +41,6 @@ ajouter.addEventListener("click", () => {
 });
 
 
-
-
 function AfficherInfoDeTache(arr) {
   const Container = document.getElementById("Container");
   Container.innerHTML = "";
@@ -98,9 +96,9 @@ function CalculStatistiques() {
     totalEffort += task.effort;
   });
 
-  statUrgence.textContent = "Moyenne Urgence : " + (totalUrgence / table.length).toFixed(2);
-  statImportance.textContent = "Moyenne Importance : " + (totalImportance / table.length).toFixed(2);
-  statEffort.textContent = "Moyenne Effort : " + (totalEffort / table.length).toFixed(2);
+  statUrgence.textContent =  (totalUrgence / table.length).toFixed(2);
+  statImportance.textContent =  (totalImportance / table.length).toFixed(2);
+  statEffort.textContent =  (totalEffort / table.length).toFixed(2);
 }
 
 AfficherInfoDeTache(table);
@@ -117,3 +115,7 @@ btnAdd.addEventListener("click", () => {
 btnAnnuler.addEventListener("click", () => {
   formSection.classList.add("hidden");
 });
+
+
+
+
