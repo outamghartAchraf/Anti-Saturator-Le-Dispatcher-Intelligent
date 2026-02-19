@@ -29,3 +29,6 @@ export function skipTask(id) {
   }
 }
 
+export function resetSkipped() {
+  skippedIds = [];
+}
