@@ -8,5 +8,9 @@ function calculer() {
     somme += Number(slider.value);
   });
 
+  let moyenne = somme / sliders.length;
 
+  document.getElementById("result").innerHTML =
+    "Somme : " + somme + "<br>Moyenne : " + moyenne.toFixed(2);
+}
 
