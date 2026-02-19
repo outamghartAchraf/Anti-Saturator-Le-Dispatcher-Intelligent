@@ -15,7 +15,6 @@
             <section class="priority-task">
                 <p class="subtitle">Votre tâche prioritaire</p>
                 <h1>Réviser le chapitre de mathématiques</h1>
-
                 <div class="metrics">
                     <div id="urgence2" class="metric">
                         <span>URGENCE</span>
@@ -25,7 +24,7 @@
                         <span>IMPORTANCE</span>
                         <strong>5</strong>
                     </div>
-                    <div id="effort2"  class="metric">
+                    <div id="effort2" class="metric">
                         <span>EFFORT</span>
                         <strong>4</strong>
                     </div>
@@ -38,71 +37,52 @@
 
             <section class="tasks">
                 <h3>Toutes les tâches</h3>
-
-                <div class="cards">
-
-                     <div class="card">
-                        <h4>Réviser le chapitre</h4>
-                        <p>Revoir les équations et exercices</p>
-                        <button class="btn-delete">Supprimer</button>
-                    </div>
-
-                  
-                </div>
+                <div class="cards" id="Container"></div>
             </section>
         </div>
 
+        <section id="formSection" class="hidden">
+            <div class="form-card">
+                <h1>Nouvelle tâche</h1>
 
+                <div>
+                    <p>Titre de la tâche *</p>
+                    <input id="tache" type="text" placeholder="Entre 5 et 50 caractères" />
+                </div>
 
-<section id="formSection" class="">
+                <div>
+                    <p>Description (optionnel)</p>
+                    <input id="description" type="text" placeholder="Détails supplémentaires" />
+                </div>
 
-  <div class="form-card">
+                <div class="card">
+                    <p>Urgence * ℹ️</p>
+                    <input id="urgence" type="range" min="1" max="5" value="5"
+                        oninput="this.nextElementSibling.textContent = this.value" />
+                    <span>5</span>
+                </div>
 
-    <h1>Nouvelle tache</h1>
+                <div class="card">
+                    <p>Importance * ℹ️</p>
+                    <input id="importance" type="range" min="1" max="5" value="5"
+                        oninput="this.nextElementSibling.textContent = this.value" />
+                    <span>5</span>
+                </div>
 
-    <div>
-        <p>Titre de la tache*</p>
-        <input type="text" placeholder="Entre 5 et 50 caractères" />
-    </div>
+                <div class="card">
+                    <p>Effort requis * ℹ️</p>
+                    <input id="effort" type="range" min="1" max="5" value="5"
+                        oninput="this.nextElementSibling.textContent = this.value" />
+                    <span>5</span>
+                </div>
 
-    <div>
-        <p>Description(optionnel)</p>
-        <input type="text" placeholder="Détails supplémentaires" />
-    </div>
+                <div class="but">
+                    <button id="annuler">Annuler</button>
+                    <button id="ajouter">Ajouter</button>
+                </div>
+            </div>
+        </section>
 
-    <div class="card">
-        <p>Urgence *ℹ️</p>
-        <input type="range" min="1" max="10" value="5"
-            oninput="this.nextElementSibling.textContent = this.value" />
-        <span>5</span>
-    </div>
-
-    <div class="card">
-        <p>Importance *ℹ️</p>
-        <input type="range" min="1" max="10" value="5"
-            oninput="this.nextElementSibling.textContent = this.value" />
-        <span>5</span>
-    </div>
-
-    <div class="card">
-        <p>Effort requis *ℹ️</p>
-        <input type="range" min="1" max="10" value="5"
-            oninput="this.nextElementSibling.textContent = this.value" />
-        <span>5</span>
-    </div>
-
-    <div class="but">
-        <button id="btnCancel">Annuler</button>
-        <button>Ajouter</button>
-    </div>
-
-  </div>
-
-</section>
-
-
-
-        
-        <script src="GestionDeTache.js"></script>
+        <script src="GestionDeTache.js" type="module"></script>
     </body>
 </html>
