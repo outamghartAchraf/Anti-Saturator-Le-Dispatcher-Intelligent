@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Saturator</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+  <div class="app">
+
+    
+    <div class="section_quiz_desighn">
+  <section id="quizSection" class="card1 box_shadow">
+      <h1>Anti-Saturator</h1>
+      <p class="subtitle">Le Dispatcher Intelligent</p>
+
+      <h2>Évaluons votre niveau d'énergie</h2>
+
+      <div class="question">
+        <p>1. Physiquement ?</p>
+        <input type="range" id="physical" min="1" max="10" value="5">
+        <span id="physicalValue">5</span>/10
+      </div>
+
+      <div class="question">
+        <p>2. Clarté mentale ?</p>
+        <input type="range" id="mental" min="1" max="10" value="5">
+        <span id="mentalValue">5</span>/10
+      </div>
+
+      <div class="question">
+        <p>3. Motivation ?</p>
+        <input type="range" id="motivation" min="1" max="10" value="5">
+        <span id="motivationValue">5</span>/10
+      </div>
+
+      <button id="startBtn" class="primary">Commencer</button>
+    </section>
+    </div>
+
+   
+    <section id="taskSection" class="hidden">
+
+      <div class="header card">
+        <div class="header-content">
+          <h2>Anti-Saturator</h2>
+          <span class="energy-label">Énergie</span>
+          <div class="energy-bar">
+            <div id="energyProgress" class="progress"></div>
+          </div>
+          <span id="energyValue"></span>
+        </div>
+        <button id="resetBtn" class="reset"> Réinitialiser</button>
+      </div>
+
+      
+      <div class="card task-card-main">
+        <h2>Votre tâche prioritaire</h2>
+        <div id="taskContainer"></div>
+      </div>
+
+     
+<div class="center">
+  <button id="skipBtn" class="secondary btn-large">Passer</button>
+  <button id="finishBtn" class="success btn-large">Terminer</button>
+</div>
+
+
+    </section>
+
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
-import { creeLocalStorage, afficherLocalStorage } from "./storage.js";
 
-let table = afficherLocalStorage() || [];
+import { creeLocalStorage, getTasks } from "./storage.js";
+
+let table = getTasks() || [];
 
 const tache = document.getElementById("tache");
 const description = document.getElementById("description");
@@ -21,9 +22,9 @@ ajouter.addEventListener("click", () => {
 
   let newTask = {
     id: Date.now(),
-    tache: tache.value,
+    title: tache.value,
     description: description.value,
-    urgence: u,
+    urgency: u,
     importance: i,
     effort: e
   };
@@ -48,7 +49,7 @@ function AfficherInfoDeTache(arr) {
   arr.forEach(n => {
     Container.innerHTML += `
       <div class="card">
-        <h4>${n.tache}</h4>
+        <h4>${n.title}</h4>
         <p>${n.description}</p>
         <button class="btn-delete" data-id="${n.id}">Supprimer</button>
       </div>
@@ -91,7 +92,7 @@ function CalculStatistiques() {
   let totalEffort = 0;
 
   table.forEach(task => {
-    totalUrgence += task.urgence;
+    totalUrgence += task.urgency;
     totalImportance += task.importance;
     totalEffort += task.effort;
   });
@@ -115,7 +116,3 @@ btnAdd.addEventListener("click", () => {
 btnAnnuler.addEventListener("click", () => {
   formSection.classList.add("hidden");
 });
-
-
-
-

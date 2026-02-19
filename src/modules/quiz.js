@@ -5,3 +5,19 @@ export function calculateEnergy() {
 
   return Math.round((physical + mental + motivation) / 3);
 }
+
+export function setupQuizSliders() {
+  const sliders = [
+    { input: 'physical', display: 'physicalValue' },
+    { input: 'mental', display: 'mentalValue' },
+    { input: 'motivation', display: 'motivationValue' }
+  ];
+
+  sliders.forEach(({ input, display }) => {
+    const inputEl = document.getElementById(input);
+    const displayEl = document.getElementById(display);
+    inputEl.addEventListener('input', (e) => {
+      displayEl.textContent = e.target.value;
+    });
+  });
+}
