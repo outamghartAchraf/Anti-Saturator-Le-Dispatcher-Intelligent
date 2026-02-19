@@ -32,3 +32,7 @@ export function skipTask(id) {
 export function resetSkipped() {
   skippedIds = [];
 }
+
+export function getScorePercentage(score) {
+  return Math.round((score / 5) * 100);
+}
