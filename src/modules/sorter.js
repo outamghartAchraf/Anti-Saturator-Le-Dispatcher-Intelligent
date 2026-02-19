@@ -36,3 +36,17 @@ export function resetSkipped() {
 export function getScorePercentage(score) {
   return Math.round((score / 5) * 100);
 }
+
+export function generateReason(task) {
+  const reasons = [];
+
+  if (task.urgency >= 4) reasons.push('très urgente');
+  else if (task.urgency >= 3) reasons.push('urgente');
+
+  if (task.importance >= 4) reasons.push('très importante');
+  else if (task.importance >= 3) reasons.push('importante');
+
+  if (task.effort <= 2) reasons.push('peu exigeante');
+
+  return reasons.length > 0 ? reasons.join(', ') : 'bien équilibrée';
+}
