@@ -81,9 +81,9 @@ function CalculStatistiques() {
   if (!statUrgence) return; 
 
   if (table.length === 0) {
-    statUrgence.textContent = "Moyenne Urgence : 0";
-    statImportance.textContent = "Moyenne Importance : 0";
-    statEffort.textContent = "Moyenne Effort : 0";
+    statUrgence.textContent = "0";
+    statImportance.textContent = "0";
+    statEffort.textContent = "0";
     return;
   }
 
