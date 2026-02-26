@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+// ==================== BREAKPOINTS ====================
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// ==================== FLEXBOX HELPERS ====================
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// ==================== GRADIENTS ====================
+@mixin gradient-primary {
+  background: linear-gradient(90deg, $color-primary, $color-primary-end);
+}
+
+@mixin gradient-bg {
+  background: linear-gradient(135deg, $color-bg-start 0%, $color-bg-end 100%);
+}
+
+// ==================== CARD STYLE ====================
+@mixin card-glow {
+  border: 1px solid $color-border-primary;
+  box-shadow: 0 0 25px $color-shadow-primary;
+}
+
+// ==================== BUTTON BASE ====================
+@mixin btn-base {
+  border: none;
+  border-radius: $border-radius-md;
+  color: $color-text-white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@mixin btn-hover-lift($shadow-color) {
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px $shadow-color;
+  }
+}

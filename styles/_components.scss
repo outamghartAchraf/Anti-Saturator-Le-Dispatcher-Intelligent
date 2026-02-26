@@ -1,0 +1,334 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'animations';
+
+// ==================== LAYOUT ====================
+.app {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.section_quiz_desighn {
+  width: 100%;
+  @include flex-center;
+}
+
+// ==================== CARDS ====================
+.card {
+  background: $color-card;
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-lg;
+}
+
+.card1 {
+  width: $card-width;
+  padding: $spacing-xxl;
+  background: $color-card-solid;
+  border-radius: $border-radius-lg;
+  color: $color-text-white;
+  @include card-glow;
+}
+
+.box_shadow {
+  @include card-glow;
+}
+
+.hidden {
+  display: none !important;
+}
+
+// ==================== QUIZ SECTION ====================
+#quizSection {
+  h1 {
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    margin-bottom: $spacing-xl;
+    color: $color-text;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: $color-text-muted;
+  margin-bottom: $spacing-xl;
+}
+
+.question {
+  margin-bottom: $spacing-xl;
+
+  p {
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-base;
+  }
+}
+
+// ==================== RANGE INPUT ====================
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  @include gradient-primary;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: $border-radius-full;
+    background: $color-accent;
+    cursor: pointer;
+    box-shadow: 0 0 10px $color-shadow-accent;
+  }
+
+  &::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: $border-radius-full;
+    background: $color-accent;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px $color-shadow-accent;
+  }
+}
+
+// ==================== HEADER ====================
+.header {
+  @include flex-between;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  min-width: 300px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: $color-text-white;
+    white-space: nowrap;
+  }
+}
+
+.energy-label {
+  font-size: $font-size-xs;
+  color: $color-yellow;
+  opacity: 0.8;
+}
+
+.energy-bar {
+  flex: 1;
+  min-width: 150px;
+  height: 12px;
+  background: $color-bg-black;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+  border: 1px solid $color-border-accent;
+}
+
+.progress {
+  height: 100%;
+  @include gradient-primary;
+  transition: width 0.3s ease;
+  width: 50%;
+}
+
+#energyValue {
+  font-weight: bold;
+  color: $color-text-white;
+  font-size: $font-size-md;
+  white-space: nowrap;
+}
+
+// ==================== TASK CARD ====================
+.task-card-main {
+  @include flex-column;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+  justify-content: center;
+}
+
+.task-box-simple {
+  width: $task-box-width;
+  background: $color-bg-dark;
+  padding: 40px 30px;
+  border-radius: $border-radius-lg;
+  border-left: 5px solid #001638;
+
+  h3 {
+    font-size: $font-size-xl;
+    color: $color-text-white;
+    margin-bottom: $spacing-xl;
+    font-weight: bold;
+  }
+}
+
+.task-reason-simple {
+  background: $color-purple-light;
+  border-left: 4px solid $color-purple;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-xl;
+}
+
+.reason-label {
+  font-size: 0.95em;
+  color: #faf6ff;
+  margin: 0 0 $spacing-sm 0;
+  font-weight: 600;
+}
+
+.reason-text {
+  font-size: $font-size-md;
+  color: $color-text-dark;
+  margin: 0;
+}
+
+.task-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+}
+
+.detail-item {
+  background: $color-bg-accent;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  border: 1px solid $color-border-accent;
+}
+
+.detail-label {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-sub;
+  text-transform: uppercase;
+  margin-bottom: $spacing-xs;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: bold;
+  color: $color-text-white;
+}
+
+.task-empty {
+  padding: 60px $spacing-lg;
+  text-align: center;
+
+  p {
+    font-size: $font-size-lg;
+    color: $color-green;
+  }
+}
+
+// ==================== BUTTONS ====================
+.primary {
+  margin-top: $spacing-lg;
+  padding: 12px 25px;
+  @include btn-base;
+  @include gradient-primary;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+  }
+}
+
+.success {
+  padding: 14px 40px;
+  background: linear-gradient(135deg, $color-success-start, $color-success-end);
+  @include btn-base;
+  font-size: $font-size-base;
+  @include btn-hover-lift(rgba(1, 96, 222, 0.4));
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  padding: 14px 40px;
+  background: linear-gradient(135deg, $color-secondary-start, $color-secondary-end);
+  @include btn-base;
+  font-size: $font-size-base;
+  @include btn-hover-lift(rgba(7, 79, 202, 0.4));
+}
+
+.btn-large {
+  padding: 16px 60px;
+  font-size: $font-size-md;
+}
+
+.reset {
+  padding: $spacing-sm $spacing-lg;
+  background: $color-bg-accent;
+  border: 1px solid $color-border-accent;
+  color: $color-text-white;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: $color-accent;
+  }
+}
+
+.center {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: $spacing-xl 0;
+}
+
+// ==================== RESPONSIVE ====================
+@include mobile {
+  .app {
+    padding: $spacing-sm;
+  }
+
+  .card {
+    padding: $spacing-lg;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header-content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .task-box-simple h3 {
+    font-size: 1.5em;
+  }
+
+  .task-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .primary,
+  .success {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+
+@use 'variables';     
+@use 'mixins';        
+@use 'animations';    
+@use 'components';   
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: variables.$font-family-base;
+  @include mixins.gradient-bg;
+  color: variables.$color-text;
+  padding: variables.$spacing-lg;
+  min-height: 100vh;
+}
